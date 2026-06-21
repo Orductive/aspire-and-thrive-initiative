@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Crown, Target, CheckCircle, Heart } from "lucide-react";
+import SEO from "@/components/SEO";
 import PageHero from "@/components/PageHero";
 import leadershipImg from "@/assets/leadership-hero.jpg";
 
@@ -15,6 +16,10 @@ const LeadershipPage = () => {
 
   return (
     <>
+      <SEO 
+        title="Leadership Program | Aspire and Thrive Initiative"
+        description="Empowering the next generation of leaders in Burundi through mentorship, community engagement, and leadership development."
+      />
       <PageHero title={t("lead.title")} subtitle={t("lead.heroSubtitle")} />
 
       <section className="section-padding bg-background">

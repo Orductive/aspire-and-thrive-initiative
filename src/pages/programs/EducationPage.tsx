@@ -6,6 +6,7 @@ import { BookOpen, Target, CheckCircle, Heart } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import EducationSignupForm from "@/components/EducationSignupForm";
 import educationImg from "@/assets/education-hero.jpg";
+import SEO from "@/components/SEO";
 
 const EducationPage = () => {
   const { t } = useLanguage();
@@ -16,6 +17,10 @@ const EducationPage = () => {
 
   return (
     <>
+      <SEO 
+        title="Education Program | Aspire and Thrive Initiative"
+        description="Aspire and Thrive Initiative provides access to quality education, school supplies, and learning resources for youth in Burundi."
+      />
       <PageHero title={t("edu.title")} subtitle={t("edu.heroSubtitle")} />
 
       {/* Intro */}

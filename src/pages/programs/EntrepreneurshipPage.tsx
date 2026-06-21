@@ -4,6 +4,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Lightbulb, Target, CheckCircle, Heart } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import entrepreneurshipImg from "@/assets/entrepreneurship-hero.jpg";
+import SEO from "@/components/SEO";
 
 const EntrepreneurshipPage = () => {
   const { t } = useLanguage();
@@ -14,6 +15,10 @@ const EntrepreneurshipPage = () => {
 
   return (
     <>
+      <SEO 
+        title="Entrepreneurship Program | Aspire and Thrive Initiative"
+        description="We support young entrepreneurs in Burundi with training, mentorship, and resources to start and grow successful businesses."
+      />
       <PageHero title={t("entre.title")} subtitle={t("entre.heroSubtitle")} />
 
       <section className="section-padding bg-background">

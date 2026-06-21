@@ -8,6 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { supabase } from "@/integrations/supabase/client";
 import PageHero from "@/components/PageHero";
+import SEO from "@/components/SEO";
 
 const programs = [
   { value: "education", labelKey: "programs.education" },
@@ -71,6 +72,10 @@ const ApplyPage = () => {
 
   return (
     <>
+      <SEO 
+        title="Apply to a Program | Aspire and Thrive Initiative"
+        description="Submit your application for Aspire and Thrive Initiative programs in education, agriculture, entrepreneurship, vocational training, or leadership."
+      />
       <PageHero title={t("apply.pageTitle")} subtitle={t("apply.pageSubtitle")} />
 
       <section className="section-padding bg-background relative overflow-hidden">

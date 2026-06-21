@@ -10,9 +10,15 @@ import GetInvolvedSection from "@/components/GetInvolvedSection";
 import DonateSection from "@/components/DonateSection";
 import ContactSection from "@/components/ContactSection";
 
+import SEO from "@/components/SEO";
+
 const Index = () => {
   return (
     <>
+      <SEO 
+        title="Aspire and Thrive Initiative | Empowering Youth & Communities"
+        description="Aspire and Thrive Initiative empowers Burundi's youth through education, mentorship, vocational training, and community development programs."
+      />
       <HeroSection />
       <AboutSection />
       <ImpactSection />

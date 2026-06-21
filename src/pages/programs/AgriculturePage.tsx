@@ -5,6 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Leaf, Target, CheckCircle, Heart } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import agricultureImg from "@/assets/agriculture-hero.jpg";
+import SEO from "@/components/SEO";
 
 const AgriculturePage = () => {
   const { t } = useLanguage();
@@ -15,6 +16,10 @@ const AgriculturePage = () => {
 
   return (
     <>
+      <SEO 
+        title="Agriculture Program | Aspire and Thrive Initiative"
+        description="Our agriculture program equips young farmers in Burundi with modern farming techniques, seeds, and sustainable practices."
+      />
       <PageHero title={t("agri.title")} subtitle={t("agri.heroSubtitle")} />
 
       <section className="section-padding bg-background">

@@ -8,6 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { supabase } from "@/integrations/supabase/client";
 import PageHero from "@/components/PageHero";
+import SEO from "@/components/SEO";
 
 const VolunteerPage = () => {
   const { t } = useLanguage();
@@ -63,6 +64,10 @@ const VolunteerPage = () => {
 
   return (
     <>
+      <SEO 
+        title="Volunteer With Us | Aspire and Thrive Initiative"
+        description="Join Aspire and Thrive Initiative as a volunteer. Share your skills and help empower communities and youth across Burundi."
+      />
       <PageHero title={t("volunteer.pageTitle")} subtitle={t("volunteer.pageSubtitle")} />
 
       <section className="section-padding bg-background relative overflow-hidden">

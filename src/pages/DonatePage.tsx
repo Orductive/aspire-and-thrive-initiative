@@ -10,6 +10,7 @@ import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { getStripe, getStripeEnvironment } from "@/lib/stripe";
 import { PaymentTestModeBanner } from "@/components/PaymentTestModeBanner";
+import SEO from "@/components/SEO";
 
 const PRESET_AMOUNTS = [25, 50, 100, 250, 500];
 
@@ -78,6 +79,10 @@ const DonatePage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Donate | Aspire and Thrive Initiative"
+        description="Support the Aspire and Thrive Initiative with a donation. Your contribution directly funds education, mentorship, and vocational programs for youth across Burundi."
+      />
       <PaymentTestModeBanner />
 
       {/* Hero */}

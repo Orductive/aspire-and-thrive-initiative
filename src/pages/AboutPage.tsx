@@ -8,6 +8,8 @@ import gallery1 from "@/assets/gallery-1.jpg";
 import gallery3 from "@/assets/gallery-3.jpg";
 import gallery6 from "@/assets/gallery-6.jpg";
 
+import SEO from "@/components/SEO";
+
 const AboutPage = () => {
   const { t } = useLanguage();
 
@@ -20,6 +22,10 @@ const AboutPage = () => {
 
   return (
     <>
+      <SEO 
+        title="About Us | Aspire and Thrive Initiative"
+        description="Learn about Aspire and Thrive Initiative's mission, vision, and core values. Discover our story and commitment to empowering youth in Burundi."
+      />
       {/* Hero */}
       <section className="relative min-h-[55vh] flex items-center justify-center overflow-hidden">
         <div

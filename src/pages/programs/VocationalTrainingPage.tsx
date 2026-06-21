@@ -6,6 +6,7 @@ import { Wrench, Target, CheckCircle, Heart } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import VocationalSignupForm from "@/components/VocationalSignupForm";
 import vocationalImg from "@/assets/vocational-hero.jpg";
+import SEO from "@/components/SEO";
 
 const VocationalTrainingPage = () => {
   const { t } = useLanguage();
@@ -16,6 +17,10 @@ const VocationalTrainingPage = () => {
 
   return (
     <>
+      <SEO 
+        title="Vocational Training | Aspire and Thrive Initiative"
+        description="Aspire and Thrive Initiative offers vocational training programs to equip youth with practical, market-ready skills for employment."
+      />
       <PageHero title={t("voc.title")} subtitle={t("voc.heroSubtitle")} />
 
       <section className="section-padding bg-background">
