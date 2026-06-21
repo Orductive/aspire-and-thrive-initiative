@@ -1,22 +1,24 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import storyImg from "@/assets/story-featured.jpg";
 
+import Reveal from "@/components/animations/Reveal";
+
 const FeaturedStorySection = () => {
   const { t } = useLanguage();
 
   return (
     <section className="relative overflow-hidden">
       <div className="grid lg:grid-cols-2 min-h-[600px]">
-        <div className="relative">
+        <Reveal className="relative">
           <img
             src={storyImg}
             alt="Young girl reading a book under a tree"
             className="w-full h-full object-cover min-h-[400px]"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-transparent to-purple-deep/20 lg:bg-none" />
-        </div>
+        </Reveal>
 
-        <div className="bg-secondary flex items-center">
+        <Reveal className="bg-secondary flex items-center">
           <div className="px-8 lg:px-16 py-16 max-w-xl">
             <p className="font-semibold tracking-widest uppercase mb-3 text-sm text-primary">
               {t("story.label")}
@@ -33,7 +35,7 @@ const FeaturedStorySection = () => {
               <p className="text-white/50 text-sm">{t("story.role")}</p>
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

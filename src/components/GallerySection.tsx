@@ -13,25 +13,29 @@ const images = [
   { src: gallery5, alt: "Farmer tending crops on a hillside farm" },
 ];
 
+import Reveal from "@/components/animations/Reveal";
+
 const GallerySection = () => {
   const { t } = useLanguage();
 
   return (
     <section className="section-padding bg-secondary">
       <div className="container mx-auto container-padding">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="font-semibold tracking-widest uppercase mb-3 text-sm text-primary">
-            {t("gallery.label")}
-          </p>
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
-            {t("gallery.title")}
-          </h2>
-          <p className="text-white/80 text-lg">
-            {t("gallery.subtitle")}
-          </p>
-        </div>
+        <Reveal>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <p className="font-semibold tracking-widest uppercase mb-3 text-sm text-primary">
+              {t("gallery.label")}
+            </p>
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+              {t("gallery.title")}
+            </h2>
+            <p className="text-white/80 text-lg">
+              {t("gallery.subtitle")}
+            </p>
+          </div>
+        </Reveal>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <Reveal staggerChildren={true} className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {images.map((img, index) => (
             <div
               key={index}
@@ -50,10 +54,11 @@ const GallerySection = () => {
               </div>
             </div>
           ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   );
 };
+
 
 export default GallerySection;

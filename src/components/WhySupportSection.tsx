@@ -1,6 +1,8 @@
 import { Heart, Users, Target, Handshake } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
+import Reveal from "@/components/animations/Reveal";
+
 const WhySupportSection = () => {
   const { t } = useLanguage();
 
@@ -15,19 +17,21 @@ const WhySupportSection = () => {
     <section className="section-padding bg-background relative overflow-hidden">
       <div className="absolute inset-0 texture-diagonal" />
       <div className="container mx-auto container-padding relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-primary font-semibold tracking-widest uppercase mb-3 text-sm">
-            {t("why.label")}
-          </p>
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
-            {t("why.title")}
-          </h2>
-          <p className="text-muted-foreground text-lg">
-            {t("why.subtitle")}
-          </p>
-        </div>
+        <Reveal>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <p className="text-primary font-semibold tracking-widest uppercase mb-3 text-sm">
+              {t("why.label")}
+            </p>
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
+              {t("why.title")}
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              {t("why.subtitle")}
+            </p>
+          </div>
+        </Reveal>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <Reveal staggerChildren={true} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {reasons.map((reason) => (
             <div key={reason.title} className="text-center group">
               <div className="w-16 h-16 bg-secondary rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
@@ -41,10 +45,11 @@ const WhySupportSection = () => {
               </p>
             </div>
           ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   );
 };
+
 
 export default WhySupportSection;

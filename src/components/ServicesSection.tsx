@@ -3,6 +3,8 @@ import { BookOpen, Users, Building2, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 
+import Reveal from "@/components/animations/Reveal";
+
 const ServicesSection = () => {
   const { t } = useLanguage();
 
@@ -37,24 +39,25 @@ const ServicesSection = () => {
     <section id="programs" className="section-padding bg-background relative overflow-hidden">
       <div className="absolute inset-0 texture-topography" />
       <div className="container mx-auto container-padding relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-primary font-semibold tracking-widest uppercase mb-3 text-sm">
-            {t("services.label")}
-          </p>
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
-            {t("services.title")}
-          </h2>
-          <p className="text-muted-foreground text-lg">
-            {t("services.subtitle")}
-          </p>
-        </div>
+        <Reveal>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <p className="text-primary font-semibold tracking-widest uppercase mb-3 text-sm">
+              {t("services.label")}
+            </p>
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
+              {t("services.title")}
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              {t("services.subtitle")}
+            </p>
+          </div>
+        </Reveal>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <Reveal staggerChildren={true} className="grid md:grid-cols-2 gap-8">
           {programs.map((program, index) => (
             <div
               key={program.title}
               className="bg-card rounded-2xl p-8 shadow-md border border-border hover:shadow-xl transition-all duration-500 hover:-translate-y-1 group"
-              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-300">
                 <program.icon className="w-7 h-7 transition-colors duration-300 text-primary" />
@@ -73,10 +76,11 @@ const ServicesSection = () => {
               </Button>
             </div>
           ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   );
 };
+
 
 export default ServicesSection;

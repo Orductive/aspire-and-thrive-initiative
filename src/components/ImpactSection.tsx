@@ -41,6 +41,8 @@ const AnimatedCounter = ({ target, suffix }: { target: number; suffix: string })
   );
 };
 
+import Reveal from "@/components/animations/Reveal";
+
 const ImpactSection = () => {
   const { t } = useLanguage();
 
@@ -55,19 +57,21 @@ const ImpactSection = () => {
     <section id="impact" className="section-padding bg-secondary relative overflow-hidden">
       <div className="absolute inset-0 texture-circles bg-[#a0a9b6]" />
       <div className="container mx-auto container-padding relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="font-semibold tracking-widest uppercase mb-3 text-sm text-primary">
-            {t("impact.label")}
-          </p>
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
-            {t("impact.title")}
-          </h2>
-          <p className="text-white/60 text-lg">
-            {t("impact.subtitle")}
-          </p>
-        </div>
+        <Reveal>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <p className="font-semibold tracking-widest uppercase mb-3 text-sm text-primary">
+              {t("impact.label")}
+            </p>
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+              {t("impact.title")}
+            </h2>
+            <p className="text-white/60 text-lg">
+              {t("impact.subtitle")}
+            </p>
+          </div>
+        </Reveal>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <Reveal staggerChildren={true} className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {stats.map((stat) => (
             <div
               key={stat.label}
@@ -80,10 +84,11 @@ const ImpactSection = () => {
               </p>
             </div>
           ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   );
 };
+
 
 export default ImpactSection;

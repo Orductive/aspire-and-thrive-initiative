@@ -76,7 +76,7 @@ const Header = () => {
                   </button>
                   {programsOpen && (
                     <div className="absolute top-full left-0 pt-2 w-64 animate-fade-in">
-                      <div className="bg-secondary/95 backdrop-blur-md rounded-xl shadow-2xl border border-white/10 overflow-hidden py-2">
+                      <div className="bg-secondary rounded-xl shadow-2xl border border-white/10 overflow-hidden py-2">
                         {programLinks.map((prog) => (
                           <Link
                             key={prog.path}
@@ -147,7 +147,7 @@ const Header = () => {
 
         {/* Mobile Nav */}
         {isOpen && (
-          <div className="lg:hidden bg-secondary/98 backdrop-blur-md border-t border-white/10 py-6 animate-fade-in">
+          <div className="lg:hidden bg-secondary border-t border-white/10 py-6 animate-fade-in">
             <nav className="flex flex-col gap-1">
               {navLinks.map((link) =>
                 link.dropdown ? (

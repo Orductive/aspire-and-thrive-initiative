@@ -1,3 +1,4 @@
+import Reveal from "@/components/animations/Reveal";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -21,26 +22,30 @@ const EducationPage = () => {
       <section className="section-padding bg-background">
         <div className="container mx-auto container-padding">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div>
-              <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
-                <BookOpen className="w-7 h-7 text-accent" />
+            <Reveal>
+              <div>
+                <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
+                  <BookOpen className="w-7 h-7 text-accent" />
+                </div>
+                <p className="font-semibold tracking-widest uppercase mb-3 text-sm text-primary">
+                  {t("programPage.aboutProgram")}
+                </p>
+                <h2 className="font-heading text-3xl sm:text-4xl font-bold text-foreground mb-6 leading-tight">
+                  {t("edu.title")}
+                </h2>
+                <p className="text-muted-foreground leading-relaxed text-lg mb-4">
+                  {t("edu.intro")}
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  {t("edu.about")}
+                </p>
               </div>
-              <p className="font-semibold tracking-widest uppercase mb-3 text-sm text-primary">
-                {t("programPage.aboutProgram")}
-              </p>
-              <h2 className="font-heading text-3xl sm:text-4xl font-bold text-foreground mb-6 leading-tight">
-                {t("edu.title")}
-              </h2>
-              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
-                {t("edu.intro")}
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                {t("edu.about")}
-              </p>
-            </div>
-            <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <img src={educationImg} alt="Children raising hands in a classroom" className="w-full h-full object-cover min-h-[400px]" />
-            </div>
+            </Reveal>
+            <Reveal>
+              <div className="rounded-2xl overflow-hidden shadow-2xl">
+                <img src={educationImg} alt="Children raising hands in a classroom" className="w-full h-full object-cover min-h-[400px]" />
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -48,20 +53,22 @@ const EducationPage = () => {
       {/* Goals */}
       <section className="section-padding bg-secondary">
         <div className="container mx-auto container-padding">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <Target className="lucide lucide-target w-10 h-10 mx-auto mb-4 text-primary" />
-            <h2 className="font-heading text-3xl sm:text-4xl font-bold mb-4 text-primary-foreground">
-              {t("programPage.goals")}
-            </h2>
-          </div>
-          <div className="max-w-3xl mx-auto grid gap-4">
+          <Reveal>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <Target className="lucide lucide-target w-10 h-10 mx-auto mb-4 text-primary" />
+              <h2 className="font-heading text-3xl sm:text-4xl font-bold mb-4 text-primary-foreground">
+                {t("programPage.goals")}
+              </h2>
+            </div>
+          </Reveal>
+          <Reveal staggerChildren={true} className="max-w-3xl mx-auto grid gap-4">
             {goals.map((goal, i) => (
               <div key={i} className="flex items-start gap-4 bg-card rounded-xl p-5 shadow-sm border border-border">
                 <CheckCircle className="w-6 h-6 text-accent flex-shrink-0 mt-0.5" />
                 <p className="text-foreground font-medium">{goal}</p>
               </div>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
 

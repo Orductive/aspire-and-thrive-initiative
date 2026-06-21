@@ -1,3 +1,4 @@
+import Reveal from "@/components/animations/Reveal";
 import { useLanguage } from "@/contexts/LanguageContext";
 import DonateSection from "@/components/DonateSection";
 import { Users, Gem, ShieldCheck, Sprout } from "lucide-react";
@@ -42,21 +43,23 @@ const AboutPage = () => {
       <section className="section-padding bg-background relative overflow-hidden">
         <div className="absolute inset-0 texture-grid bg-[#a0a9b6]" />
         <div className="container mx-auto container-padding relative z-10">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <p className="font-semibold tracking-widest uppercase mb-3 text-sm text-primary">
-              {t("aboutPage.storyLabel")}
-            </p>
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-8 leading-tight">
-              {t("aboutPage.storyTitle")}
-            </h2>
-            <div className="space-y-6 text-muted-foreground leading-relaxed text-lg text-left">
-              <p>{t("aboutPage.storyP1")}</p>
-              <p>{t("aboutPage.storyP2")}</p>
+          <Reveal>
+            <div className="max-w-4xl mx-auto text-center mb-16">
+              <p className="font-semibold tracking-widest uppercase mb-3 text-sm text-primary">
+                {t("aboutPage.storyLabel")}
+              </p>
+              <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-8 leading-tight">
+                {t("aboutPage.storyTitle")}
+              </h2>
+              <div className="space-y-6 text-muted-foreground leading-relaxed text-lg text-left">
+                <p>{t("aboutPage.storyP1")}</p>
+                <p>{t("aboutPage.storyP2")}</p>
+              </div>
             </div>
-          </div>
+          </Reveal>
 
           {/* Photo mosaic */}
-          <div className="grid grid-cols-3 gap-4 max-w-5xl mx-auto">
+          <Reveal staggerChildren={true} className="grid grid-cols-3 gap-4 max-w-5xl mx-auto">
             <div className="rounded-2xl overflow-hidden shadow-lg row-span-2">
               <img src={gallery1} alt="Community program" className="w-full h-full object-cover" />
             </div>
@@ -66,7 +69,7 @@ const AboutPage = () => {
             <div className="rounded-2xl overflow-hidden shadow-lg col-span-2">
               <img src={gallery6} alt="Livestock program" className="w-full h-[260px] object-cover" />
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -75,7 +78,7 @@ const AboutPage = () => {
         <div className="absolute inset-0 texture-topography" />
         <div className="container mx-auto container-padding relative z-10">
           <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
-            <div className="lg:col-span-2 flex justify-center">
+            <Reveal className="lg:col-span-2 flex justify-center">
               <div className="relative">
                 <div className="w-72 h-72 sm:w-80 sm:h-80 rounded-2xl overflow-hidden shadow-2xl border-4 border-accent/20">
                   <img
@@ -88,8 +91,8 @@ const AboutPage = () => {
                   {t("aboutPage.founderTag")}
                 </div>
               </div>
-            </div>
-            <div className="lg:col-span-3">
+            </Reveal>
+            <Reveal className="lg:col-span-3">
               <p className="font-semibold tracking-widest uppercase mb-3 text-sm text-primary">
                 {t("aboutPage.founderLabel")}
               </p>
@@ -101,7 +104,7 @@ const AboutPage = () => {
                 <p>{t("aboutPage.founderP1")}</p>
                 <p>{t("aboutPage.founderP2")}</p>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -110,18 +113,20 @@ const AboutPage = () => {
       <section className="section-padding bg-secondary text-white relative overflow-hidden">
         <div className="absolute inset-0 texture-circles bg-[#a0a9b6]" />
         <div className="container mx-auto container-padding relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="font-semibold tracking-widest uppercase mb-3 text-sm text-primary">
-              {t("aboutPage.missionLabel")}
-            </p>
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 leading-tight">
-              {t("aboutPage.missionTitle")}
-            </h2>
-            <div className="space-y-6 text-white/70 leading-relaxed text-lg">
-              <p>{t("aboutPage.missionP1")}</p>
-              <p>{t("aboutPage.missionP2")}</p>
+          <Reveal>
+            <div className="max-w-4xl mx-auto text-center">
+              <p className="font-semibold tracking-widest uppercase mb-3 text-sm text-primary">
+                {t("aboutPage.missionLabel")}
+              </p>
+              <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 leading-tight">
+                {t("aboutPage.missionTitle")}
+              </h2>
+              <div className="space-y-6 text-white/70 leading-relaxed text-lg">
+                <p>{t("aboutPage.missionP1")}</p>
+                <p>{t("aboutPage.missionP2")}</p>
+              </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -129,15 +134,17 @@ const AboutPage = () => {
       <section className="section-padding bg-background relative overflow-hidden">
         <div className="absolute inset-0 texture-grid bg-[#a0a9b6]" />
         <div className="container mx-auto container-padding relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <p className="font-semibold tracking-widest uppercase mb-3 text-sm text-primary">
-              {t("aboutPage.valuesLabel")}
-            </p>
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
-              {t("aboutPage.valuesTitle")}
-            </h2>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <Reveal>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <p className="font-semibold tracking-widest uppercase mb-3 text-sm text-primary">
+                {t("aboutPage.valuesLabel")}
+              </p>
+              <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
+                {t("aboutPage.valuesTitle")}
+              </h2>
+            </div>
+          </Reveal>
+          <Reveal staggerChildren={true} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((val) => (
               <div key={val.title} className="bg-card rounded-2xl p-8 text-center shadow-md border border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group">
                 <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-5 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
@@ -147,7 +154,7 @@ const AboutPage = () => {
                 <p className="text-muted-foreground text-sm leading-relaxed">{val.desc}</p>
               </div>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
 
