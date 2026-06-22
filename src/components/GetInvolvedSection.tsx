@@ -14,7 +14,7 @@ const GetInvolvedSection = () => {
       title: t("involved.donateTitle"),
       description: t("involved.donateDesc"),
       cta: t("involved.makeGift"),
-      href: "/contact",
+      href: "/donate",
     },
     {
       icon: Handshake,
