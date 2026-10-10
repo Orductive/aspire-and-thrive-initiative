@@ -46,6 +46,20 @@ const VolunteerPage = () => {
 
       if (error) throw error;
 
+      try {
+        const { error: notifyError } = await supabase.functions.invoke("send-notification", {
+          body: {
+            formType: "volunteer",
+            fullName: formData.full_name.trim(),
+            email: formData.email.trim(),
+            details: `SKILLS: ${formData.skills.trim() || "—"}\n\nREASON: ${formData.reason.trim()}`,
+          },
+        });
+        if (notifyError) console.error("notification email failed", notifyError);
+      } catch (e) {
+        console.error("notification email failed", e);
+      }
+
       setIsSubmitted(true);
       toast({
         title: t("volunteer.successTitle"),

@@ -1,4 +1,7 @@
-project_id = "qmgmgypblfbklzapdagh"
+project_id = "rqgjkmwzgpezjfvqqhqs"
 
 [functions.create-donation-checkout]
+verify_jwt = false
+
+[functions.send-notification]
 verify_jwt = false

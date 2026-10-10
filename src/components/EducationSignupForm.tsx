@@ -62,6 +62,16 @@ const EducationSignupForm = () => {
         motivation,
       });
       if (error) throw error;
+
+      try {
+        const { error: notifyError } = await supabase.functions.invoke("send-notification", {
+          body: { formType: "program", fullName: parsed.data.full_name, email: parsed.data.email, details: motivation },
+        });
+        if (notifyError) console.error("notification email failed", notifyError);
+      } catch (e) {
+        console.error("notification email failed", e);
+      }
+
       setSubmitted(true);
       toast({ title: "Application received", description: "We'll be in touch soon." });
     } catch (err) {
