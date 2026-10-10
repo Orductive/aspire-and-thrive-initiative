@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Phone, Send, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactSection = () => {
   const { t } = useLanguage();
@@ -31,8 +32,24 @@ const ContactSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    const { name, email, message } = formData;
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const { error } = await supabase.from("contact_messages").insert({
+        full_name: name,
+        email,
+        message,
+      });
+      if (error) throw error;
+
+      try {
+        const { error: notifyError } = await supabase.functions.invoke("send-notification", {
+          body: { formType: "contact", fullName: name, email, details: message },
+        });
+        if (notifyError) console.error("notification email failed", notifyError);
+      } catch (e) {
+        console.error("notification email failed", e);
+      }
+
       setIsSubmitted(true);
       toast({ title: t("contact.thankYou"), description: t("contact.teamReply") });
       setTimeout(() => {
@@ -40,7 +57,11 @@ const ContactSection = () => {
         setIsSubmitted(false);
       }, 5000);
     } catch {
-      toast({ title: t("contact.thankYou"), description: t("contact.teamReply") });
+      toast({
+        title: t("apply.errorTitle"),
+        description: t("apply.errorDesc"),
+        variant: "destructive",
+      });
     } finally {
       setIsSubmitting(false);
     }
