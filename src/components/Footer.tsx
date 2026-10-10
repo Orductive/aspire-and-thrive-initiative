@@ -24,18 +24,18 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-secondary py-16">
+    <footer className="bg-background py-16 border-t border-border">
       <div className="container mx-auto container-padding">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div className="md:col-span-1">
             <img src={atiLogo} alt="Aspire and Thrive Initiative" className="h-24 sm:h-28 w-auto mb-6 drop-shadow-lg" />
-            <p className="text-white/60 text-sm leading-relaxed">
+            <p className="text-foreground/70 text-sm leading-relaxed">
               {t("footer.mission")}
             </p>
           </div>
 
           <div>
-            <h5 className="font-bold mb-4 text-sm uppercase tracking-wider text-primary-foreground font-serif">
+            <h5 className="font-bold mb-4 text-sm uppercase tracking-wider text-foreground font-serif">
               {t("footer.quickLinks")}
             </h5>
             <nav className="space-y-2">
@@ -43,7 +43,7 @@ const Footer = () => {
                 <Link
                   key={link.label}
                   to={link.path}
-                  className="block text-white/60 hover:text-white transition-colors text-sm"
+                  className="block text-foreground/70 hover:text-foreground transition-colors text-sm"
                 >
                   {link.label}
                 </Link>
@@ -52,7 +52,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h5 className="font-bold mb-4 text-sm uppercase tracking-wider text-primary-foreground font-serif">
+            <h5 className="font-bold mb-4 text-sm uppercase tracking-wider text-foreground font-serif">
               {t("footer.programs")}
             </h5>
             <nav className="space-y-2">
@@ -60,7 +60,7 @@ const Footer = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className="block text-white/60 hover:text-white transition-colors text-sm"
+                  className="block text-foreground/70 hover:text-foreground transition-colors text-sm"
                 >
                   {link.label}
                 </Link>
@@ -69,19 +69,19 @@ const Footer = () => {
           </div>
 
           <div>
-            <h5 className="font-bold mb-4 text-sm uppercase tracking-wider text-primary-foreground font-serif">
+            <h5 className="font-bold mb-4 text-sm uppercase tracking-wider text-foreground font-serif">
               {t("footer.contact")}
             </h5>
             <div className="space-y-3">
-              <a href="mailto:contact@aspirehi.org" className="flex items-center gap-2 text-white/60 hover:text-white transition-colors text-sm">
+              <a href="mailto:contact@aspirehi.org" className="flex items-center gap-2 text-foreground/70 hover:text-foreground transition-colors text-sm">
                 <Mail className="w-4 h-4" />
                 contact@aspirehi.org
               </a>
-              <a href="tel:2074002909" className="flex items-center gap-2 text-white/60 hover:text-white transition-colors text-sm">
+              <a href="tel:2074002909" className="flex items-center gap-2 text-foreground/70 hover:text-foreground transition-colors text-sm">
                 <Phone className="w-4 h-4" />
                 (207) 400-2909
               </a>
-              <div className="flex items-start gap-2 text-white/60 text-sm">
+              <div className="flex items-start gap-2 text-foreground/70 text-sm">
                 <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5" />
                 Bujumbura, Burundi
               </div>
@@ -89,18 +89,18 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8">
+        <div className="border-t border-border pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-white/40 text-sm">
+            <p className="text-foreground/50 text-sm">
               © {currentYear} Aspire and Thrive Initiative. {t("footer.rights")}
             </p>
-            <p className="text-white/40 text-sm">
+            <p className="text-foreground/50 text-sm">
               {t("footer.builtBy")}{" "}
               <a
                 href="https://www.orductive.online"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/60 hover:text-white transition-colors"
+                className="text-foreground/70 hover:text-foreground transition-colors"
               >
                 Orductive
               </a>
